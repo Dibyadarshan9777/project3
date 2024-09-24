@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials-id')
-        DOCKER_IMAGE_REPO = 'dibyadarshandevops/project2'  // Repository only
+        DOCKER_IMAGE_REPO = 'dibyadarshandevops/project3'  // Repository only
         DOCKER_IMAGE_TAG = 'v1.0'  // Tag only
         KUBECONFIG_PATH = '/var/jenkins_home/.kube/config'
     }
@@ -12,7 +12,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 echo 'Cloning repository...'
-                git 'https://github.com/Dibyadarshan9777/project2.git'  // Update with your repo URL
+                git 'https://github.com/Dibyadarshan9777/project3.git'  // Update with your repo URL
             }
         }
 
@@ -57,7 +57,7 @@ pipeline {
                 script {
                     echo 'Deploying to Kubernetes with Helm...'
                     sh """
-                        helm upgrade --install project2-release ./project2 \
+                        helm upgrade --install project3-release ./project3 \
                         --set image.repository='${DOCKER_IMAGE_REPO}' \
                         --set image.tag='${DOCKER_IMAGE_TAG}' \
                         --namespace dbspe

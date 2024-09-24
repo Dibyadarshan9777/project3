@@ -2,7 +2,7 @@ version: '3'
 
 services:
   web:
-    image: dibyadarshandevops/project1:v1.0
+    image: dibyadarshandevops/project3:v1.0
     build:
       context: .
       dockerfile: Dockerfile

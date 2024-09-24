@@ -1,4 +1,4 @@
 image:
-  repository: dibyadarshandevops/project2
+  repository: dibyadarshandevops/project3
   tag: v1.0
   pullPolicy: IfNotPresent
